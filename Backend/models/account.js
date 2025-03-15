@@ -24,7 +24,7 @@ export const account = sequelize.define('Account', {
     allowNull: false
   },
   role: {
-    type: DataTypes.ENUM('admin', 'teacher', 'leader'),
+    type: DataTypes.ENUM('student', 'teacher', 'leader'),
     allowNull: false
   },
   address: {
@@ -40,7 +40,7 @@ export const account = sequelize.define('Account', {
     allowNull: false
   },
   crewOrSchool: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM('crew', 'school'),
     allowNull: false
   }
 });

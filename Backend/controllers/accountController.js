@@ -34,15 +34,16 @@ const getAccountById = async (req, res) => {
         const id = req.params.id;
         const result = await accountService.getAccountById(id);
         if(result.status){
-            return res.status(200).send({
+            return res.status(200).json({
                 response_code: 200,
-                result});
-        }else if (result.status== false){
-            return res.status(404).send(result);
+                result
+            });
+        }else if (result.status == false){
+            return res.status(404).json(result);
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).send({message: "Account fetch failed"});
+        return res.status(500).json({message: "Account fetch failed", status: false});
     }
 };
 
@@ -86,10 +87,37 @@ const deleteAccount = async (req, res) => {
     }
 };
 
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const result = await accountService.login(email, password);
+        
+        if (result.status) {
+            return res.status(200).json({
+                status: true,
+                message: "Login successful",
+                data: result.data
+            });
+        } else {
+            return res.status(401).json({
+                status: false,
+                message: result.message
+            });
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Internal server error",
+            status: false
+        });
+    }
+};
+
 export default {
     createAccount,
     getAllAccount,
     getAccountById,
     updateAccount,
-    deleteAccount
+    deleteAccount,
+    login   
 };

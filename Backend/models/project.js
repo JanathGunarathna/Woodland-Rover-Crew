@@ -26,7 +26,8 @@ export const project = sequelize.define('Project', {
   projectDescription: {
     type: DataTypes.STRING,
     allowNull: false
-  }
+  },
+  
 });
 
 export default project;
