@@ -38,18 +38,18 @@ export const getAccountById = async(id)=>{
 
 export const updateAccount = async (data)=> {
     try {
-        const [name,email,password,role,address,roverRegistrationNumber,idNumber,crewOrSchool,id]= data;
-        const result = await account.update ({
-            name: data.name,
-            email: data.email,
-            password: data.password,
-            role: data.role,
-            address: data.address,
-            roverRegistrationNumber: data.roverRegistrationNumber,
-            idNumber: data.idNumber,
-            crewOrSchool: data.crewOrSchool,
+        const [name,email,password,role,address,roverRegistrationNumber,idNumber,crewOrSchool,id] = data;
+        const result = await account.update({
+            name: name,
+            email: email,
+            password: password,
+            role: role,
+            address: address,
+            roverRegistrationNumber: roverRegistrationNumber,
+            idNumber: idNumber,
+            crewOrSchool: crewOrSchool
         },{
-            where :{id:id}
+            where: {id: id}
         });
         return result;
     } catch (error) {
@@ -67,3 +67,14 @@ export const deleteAccount = async(id)=>{
         throw error;
     }
 }
+
+export const findByEmail = async (email) => {
+    try {
+        const result = await account.findOne({
+            where: { email: email }
+        });
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};

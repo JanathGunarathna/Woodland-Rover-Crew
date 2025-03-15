@@ -46,7 +46,7 @@ export const updateAccount = async (data) => {
     try {
         const [name,email,password,role,address,roverRegistrationNumber,idNumber,crewOrSchool ,id]= data;
         const exAccount = await accountRepo.getAccountById(id);
-        if(exProject == null){
+        if(exAccount == null){
             return {status: false, message: "Account update failed"};
         }
         const dataToUpdate =[name,email,password,role,address,roverRegistrationNumber,idNumber,crewOrSchool,id];
@@ -76,3 +76,40 @@ export const deleteAccount = async(id)=>{
         throw error;
     }
  }; 
+
+ export const login = async (email, password) => {
+    try {
+        const user = await accountRepo.findByEmail(email);
+        
+        if (!user) {
+            return {
+                status: false,
+                message: "Invalid email or password"
+            };
+        }
+
+        // Simple password check (you should use bcrypt in production)
+        if (user.password !== password) {
+            return {
+                status: false,
+                message: "Invalid email or password"
+            };
+        }
+
+        // Don't send password back to client
+        const userData = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+        };
+
+        return {
+            status: true,
+            message: "Login successful",
+            data: userData
+        };
+    } catch (error) {
+        throw error;
+    }
+};

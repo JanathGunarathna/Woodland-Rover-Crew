@@ -1,0 +1,348 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* From Uiverse.io by adamgiebl */ 
+.cssbuttons-io-button {
+  background: #06e006;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #d82d0f;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #05f12c;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #0bf51e;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* login page */
+ 
+#form {
+  display:flex;
+  place-items: center;
+  position:fixed; 
+  width: 650px;
+  height: 700px;
+  padding: 20px;
+  background-color: #020202;
+  box-shadow: 0px 15px 60px #f03232;
+  outline: 1px solid #eb0d0d;
+  border-radius: 10px;
+}
+
+#form-body {
+  position:fixed;
+  top: 50%;
+  right: 25px;
+  left: 25px;
+  width: 370px;
+  margin: -156px auto 0 auto;
+}
+
+#welcome-lines {
+  text-align: center;
+  line-height: 1;
+  color: #f8f6f6;
+}
+
+#welcome-line-1 {
+  color: #f5f2f2;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+#welcome-line-2 {
+  color: #e61919;
+  font-size: 18px;
+  margin-top: 19px;
+}
+
+#input-area {
+  margin-top: 40px;
+}
+
+.form-inp {
+  padding: 13px 25px;
+  background: transparent;
+  border: 1px solid #e7dcdc;
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.form-inp:focus {
+  border: 1px solid #458a68;
+}
+
+.form-inp:first-child {
+  margin-bottom: 15px;
+}
+
+.form-inp input {
+  width: 100%;
+  background: none;
+  font-size: 13.4px;
+  color: #00FF7F;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-inp input:focus {
+  outline: none;
+}
+
+#submit-button-cvr {
+  margin-top: 20px;
+}
+
+#submit-button {
+  display: block;
+  width: 100%;
+  color: #00FF7F;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  padding: 14px 13px 12px 13px;
+  border: 0;
+  outline: 1px solid #00FF7F;
+  border-radius: 8px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+}
+
+#submit-button:hover {
+  transition: all ease-in-out .3s;
+  background-color: #00FF7F;
+  color: #161616;
+  cursor: pointer;
+}
+
+#forgot-pass {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#forgot-pass a {
+  color: #868686;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#bar {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  width: 28px;
+  height: 8px;
+  margin-left: -33px;
+  background-color: #ff0000;
+  border-radius: 10px;
+}
+
+#bar:before,
+#bar:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ececec;
+  border-radius: 50%;
+}
+
+#bar:before {
+  right: -20px;
+}
+
+#bar:after {
+  right: -38px;
+}
+
+/* OtpPage     */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:fixed;
+  overflow: hidden;
+  padding: 100px;
+  background: #606c88;
+  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
+  background: linear-gradient(to right, #3f4c6b, #606c88);
+  border-radius: 10px;
+  box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+  max-width: 570px;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 2.0rem;
+  font-weight: 820;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.form .inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form .inputs input {
+  height: 2.5em;
+  width: 2.5em;
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  border-radius: 0.3em;
+  border: 1px solid rgba(253, 253, 253, 0.363);
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.form .inputs input:focus {
+  border: 1px solid rgb(99 102 241);
+}
+
+.resend {
+  color: #f3ecec;
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.resend-action {
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 6px;
+  color: rgb(243, 142, 142);
+  font-weight: 600;
+}
+
+.resend-action:hover {
+  text-decoration: underline #2b8af7;
+}
+
+.validate {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-decoration: none;
+  background-color: #606c88;
+  padding: 10px 20px;
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: .3s ease;
+}
+
+.validate:hover {
+  background-color: #3f4c6b;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #3f4c6b;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.close:hover {
+  background-color: rgba(255, 0, 0, 0.603);
+}
